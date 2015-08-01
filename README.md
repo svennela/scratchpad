@@ -22,4 +22,4 @@
 
 ##### SSH without password. Copy pub keys to remote machine.
 
-scp /Users/svennela/.ssh/id_rsa.pub ubuntu@<IPADDRESS>:/ubuntu/.ssh/authorized_keys
+scp /Users/yourmachinename/.ssh/id_rsa.pub ubuntu@<IPADDRESS>:/ubuntu/.ssh/authorized_keys
