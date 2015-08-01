@@ -14,6 +14,8 @@
 ##### Commands to make all users root
 
 * sudo vi /etc/sudoers 
-* %sudo ALL=NOPASSWD: ALL 
-# Allow members of group sudo to execute any command 
+* %sudo ALL=NOPASSWD: ALL  
+
+#### Allow members of group sudo to execute any command 
+
 * %sudo   ALL=(ALL:ALL) NOPASSWD: ALL 
