@@ -6,7 +6,14 @@
 
 
 ##### renaming hostname in ubuntu:
-sudo -s
-sudo vi /etc/hostname
-sudo vi /etc/hosts
-shutdown -ry now
+* sudo -s
+* sudo vi /etc/hostname
+* sudo vi /etc/hosts 
+* shutdown -ry now 
+
+##### Commands to make all users root
+
+* sudo vi /etc/sudoers 
+* %sudo ALL=NOPASSWD: ALL 
+# Allow members of group sudo to execute any command 
+* %sudo   ALL=(ALL:ALL) NOPASSWD: ALL 
