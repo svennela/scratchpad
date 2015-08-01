@@ -16,6 +16,10 @@
 * sudo vi /etc/sudoers 
 * %sudo ALL=NOPASSWD: ALL  
 
-#### Allow members of group sudo to execute any command 
+##### Allow members of group sudo to execute any command 
 
 * %sudo   ALL=(ALL:ALL) NOPASSWD: ALL 
+
+##### SSH without password. Copy pub keys to remote machine.
+
+scp /Users/svennela/.ssh/id_rsa.pub ubuntu@<IPADDRESS>:/ubuntu/.ssh/authorized_keys
