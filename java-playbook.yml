@@ -1,0 +1,7 @@
+---
+- name: Installing java on remote machines
+  hosts: marketpalce1-master
+  remote_user: ubuntu
+  sudo: yes
+  roles:
+     - { role: ansiblebit.oracle-java, oracle_java_default: yes }
