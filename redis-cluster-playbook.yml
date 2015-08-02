@@ -1,0 +1,12 @@
+---
+- hosts: redis_hosts
+  remote_user: ubuntu
+  sudo: yes
+- name: Manage Redis server
+  hosts: 'debops_redis'
+  roles:
+    - { role: debops.redis, tags: redis }
+- name: Manage Redis sentinel server
+  hosts: 'debops_redis_sentinel'
+  roles:
+    - { role: debops.redis, tags: redis }
