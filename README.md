@@ -23,3 +23,11 @@
 ##### SSH without password. Copy pub keys to remote machine.
 
 scp /Users/yourmachinename/.ssh/id_rsa.pub ubuntu@<IPADDRESS>:/ubuntu/.ssh/authorized_keys
+
+##### Adding new user in rabbit mq.
+
+* sudo rabbitmqctl add_user myuser mypass
+* sudo rabbitmqctl set_permissions -p / myuser ".*" ".*" ".*"
+* sudo rabbitmqctl set_user_tags myuser administrator
+
+
