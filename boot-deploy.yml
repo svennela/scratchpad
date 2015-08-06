@@ -1,0 +1,46 @@
+---
+
+- name: Application Deploy
+  hosts: app_server1
+  remote_user: ubuntu
+  sudo: yes
+  vars:
+    kill_script: kill_javaapps.sh
+    dest_location: /tmp
+    process_string: java
+    config_server_jar: springbox-config-server-0.0.1-SNAPSHOT.jar
+    remote_deploy_location: /var/ngcloudapps
+    deploy_location: '/springbox-config-server/target'
+  pre_tasks:
+    - name: Search java processes and get pid
+      shell: ps aux | pgrep  java
+      register: results
+      ignore_errors: True
+
+    - name: pringint pid for java process
+      debug: var=results
+      ignore_errors: True
+
+    - name: copy shell scritp to remote machine.
+      copy: src={{kill_script}} dest={{dest_location}} owner=ubuntu  mode="755"
+    #- name: runing copied script
+      #shell: /bin/sh /tmp/{{kill_script}} owner=ubuntu
+      #shell: sudo pkill -9 -f program
+    - name: Killing java process
+      action: shell sudo pkill -f {{process_string}}
+      ignore_errors: True
+    - name: checking for java processing again...
+      shell: ps aux | pgrep  java
+      register: results
+      ignore_errors: True
+    - name: pringint pid for java process
+      debug: var=results
+      ignore_errors: True
+  tasks:
+    - name: Copying jar file
+      copy: src={{deploy_location}}/{{config_server_jar}} dest={{remote_deploy_location}} owner=ubuntu  mode="755"
+    - debug: var=cat.stdout_lines
+    - name: running the jarfile
+      shell: nohup java -jar {{remote_deploy_location}}/{{config_server_jar}} &
+    - debug: var=cat.stdout_lines
+    
