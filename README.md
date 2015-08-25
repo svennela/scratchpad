@@ -30,4 +30,18 @@ scp /Users/yourmachinename/.ssh/id_rsa.pub ubuntu@<IPADDRESS>:/ubuntu/.ssh/autho
 * sudo rabbitmqctl set_permissions -p / myuser ".*" ".*" ".*"
 * sudo rabbitmqctl set_user_tags myuser administrator
 
+##### redis latency test.
 
+redis-cli -h IPADDRESS --intrinsic-latency 30
+Max latency so far: 1 microseconds.
+Max latency so far: 5 microseconds.
+Max latency so far: 14 microseconds.
+Max latency so far: 15 microseconds.
+Max latency so far: 16 microseconds.
+Max latency so far: 26 microseconds.
+Max latency so far: 55 microseconds.
+Max latency so far: 119 microseconds.
+Max latency so far: 150 microseconds.
+
+393825778 total runs (avg latency: 0.0762 microseconds / 761.76 nanoseconds per run).
+Worst run took 1969x longer than the average latency.
