@@ -40,3 +40,26 @@ Worst run took 1969x longer than the average latency.
 brew install httpie
 
 http://www.kitploit.com/2015/08/httpie-cli-curl-like-tool-for-humans.html?utm_content=buffer3e195&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer#.VcsqqCIFMMQ.twitter
+
+
+##### building uaa war file and deploying on VM
+
+git clone https://github.com/cloudfoundry/uaa.git
+
+Changing database settings in uaa/src/main/resources/uaa.yml
+
+spring_profiles: mysql,default
+
+database:
+  driverClassName: org.mariadb.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/uaa
+  username: root
+  password: root
+
+Skiping tests as we want only war file
+
+./gradlew build -x test
+
+deploy uaa/build/libs/cloudfoundry-identity-uaa-2.6.1.war to tomcat installation.. 
+
+
