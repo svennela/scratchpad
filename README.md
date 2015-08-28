@@ -36,3 +36,7 @@ redis-cli -h IPADDRESS --intrinsic-latency 30
 
 393825778 total runs (avg latency: 0.0762 microseconds / 761.76 nanoseconds per run).
 Worst run took 1969x longer than the average latency.
+
+brew install httpie
+
+http://www.kitploit.com/2015/08/httpie-cli-curl-like-tool-for-humans.html?utm_content=buffer3e195&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer#.VcsqqCIFMMQ.twitter
