@@ -85,3 +85,21 @@ solution
 
 npm install iconv
 
+
+
+Exception encountered connecting to CoreSimulatorBridge: Unable to connect to CoreSimulatorBridge
+
+
+cordova platform add ios
+cordova build --emulator
+ios-sim launch platforms/ios/build/emulator/ionFullApp.app --devicetypeid "com.apple.CoreSimulator.SimDeviceType.iPhone-6"
+
+//remove with sudo
+sudo ionic platform remove ios
+
+//add iOS back without sudo
+ionic platform add ios
+
+//worked for me
+ionic emulate ios
+
