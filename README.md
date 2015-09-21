@@ -63,3 +63,25 @@ Skiping tests as we want only war file
 deploy uaa/build/libs/cloudfoundry-identity-uaa-2.6.1.war to tomcat installation.. 
 
 
+
+gyp ERR! configure error
+gyp ERR! stack Error: `gyp` failed with exit code: 1
+gyp ERR! stack     at ChildProcess.onCpExit (/Users/svennela/workspace/myapps/ionic-apps/ionic-projects-demo/node_modules/gulp-sass/node_modules/node-sass/node_modules/pangyp/lib/configure.js:346:16)
+gyp ERR! stack     at emitTwo (events.js:87:13)
+gyp ERR! stack     at ChildProcess.emit (events.js:172:7)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:200:12)
+gyp ERR! System Darwin 14.3.0
+gyp ERR! command "/usr/local/bin/node" "/Users/svennela/workspace/myapps/ionic-apps/ionic-projects-demo/node_modules/gulp-sass/node_modules/node-sass/node_modules/pangyp/bin/node-gyp" "rebuild"
+gyp ERR! cwd /Users/svennela/workspace/myapps/ionic-apps/ionic-projects-demo/node_modules/gulp-sass/node_modules/node-sass
+gyp ERR! node -v v4.0.0
+gyp ERR! pangyp -v v2.3.2
+gyp ERR! not ok
+Build failed
+gulp-rename@1.2.2 node_modules/gulp-rename
+
+
+
+solution
+
+npm install iconv
+
