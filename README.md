@@ -103,3 +103,11 @@ ionic platform add ios
 //worked for me
 ionic emulate ios
 
+## git add commit
+git init
+git add .
+
+##or push an existing repository from the command line
+
+git remote add origin https://github.com/svennela/ionic-firebase.git
+git push -u origin master
