@@ -111,3 +111,6 @@ git add .
 
 git remote add origin https://github.com/svennela/ionic-firebase.git
 git push -u origin master
+
+git add *
+git commit -m "final updates" -a
