@@ -16,8 +16,13 @@ curl -v -d"username=marissa&password=koala&client_id=app&grant_type=password" -u
 #### Get TOKEN
 curl -v -XPOST -H"Application/json" -u "cf:" --data "username=marissa&password=koala&client_id=cf&grant_type=password&response_type=token" http://localhost:8080/uaa/oauth/token
 
-#### GET OTHER USERS..
+#### UAA END POINTS USERS..
+
+curl -v -H"Authorization:Bearer $TOKEN" "http://localhost:8080/uaa/userinfo"
+
 curl -v -H"Authorization:Bearer $TOKEN" "http://localhost:8080/uaa/Users?filter=username%20sw%20%22marissa%22"
+
+
 
 ##### Create $TOKEN variable...
 
