@@ -5,10 +5,17 @@
   select id,displayname,identity_zone_id from groups;
   select id,displayname,identity_zone_id from groups,group_membership where group_membership.group_id=groups.id and 
         member_id = '387b30ed-2610-4412-a88e-d744d5488558';
+  Scopes for users;
+  Clients and scopes
+  select client_id,scope oauth_client_details;
+  UserId's and scopes...
+  
+  select * from authz_approvals;
 
+##### Get TOKEN for grant_type=password
 
-##### Get TOKEN
 curl -v -d"username=marissa&password=koala&client_id=app&grant_type=password" -u "app:appclientsecret" http://localhost:8080/uaa/oauth/token
+curl -v -d"username=salesguy&password=password&client_id=sales-app&grant_type=password" -u "sales-app:secret" http://myzone.localhost:8080/uaa/oauth/token
 
 ##### create environment variables TOKEN and use it
  TOKEN='eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMjJhOWQ5ZC1mMjZjLTRhZTgtYjBkNi0zMTlkNzZkNGJlN2EiLCJzdWIiOiIzODdiMzBlZC0yNjEwLTQ0MTItYTg4ZS1kNzQ0ZDU0ODg1NTgiLCJzY29wZSI6WyJzY2ltLnVzZXJpZHMiLCJvcGVuaWQiLCJjbG91ZF9jb250cm9sbGVyLnJlYWQiLCJwYXNzd29yZC53cml0ZSIsImNsb3VkX2NvbnRyb2xsZXIud3JpdGUiXSwiY2xpZW50X2lkIjoiYXBwIiwiY2lkIjoiYXBwIiwiYXpwIjoiYXBwIiwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIiwidXNlcl9pZCI6IjM4N2IzMGVkLTI2MTAtNDQxMi1hODhlLWQ3NDRkNTQ4ODU1OCIsIm9yaWdpbiI6InVhYSIsInVzZXJfbmFtZSI6Im1hcmlzc2EiLCJlbWFpbCI6Im1hcmlzc2FAdGVzdC5vcmciLCJhdXRoX3RpbWUiOjE0NDg1MDQ2NTAsInJldl9zaWciOiI0MDUxYmQxZiIsImlhdCI6MTQ0ODUwNDY1MCwiZXhwIjoxNDQ4NTQ3ODUwLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvdWFhL29hdXRoL3Rva2VuIiwiemlkIjoidWFhIiwiYXVkIjpbImFwcCIsInNjaW0iLCJvcGVuaWQiLCJjbG91ZF9jb250cm9sbGVyIiwicGFzc3dvcmQiXX0.hp4i452ahKSiSmKsT1VFRifTA8p4Z_oo72RhK0Gk9zk';
