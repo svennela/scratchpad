@@ -33,6 +33,12 @@ curl -v -H"Authorization:Bearer $TOKEN" "http://localhost:8080/uaa/Users?filter=
 
 ##### Create $TOKEN variable...
 
-
+CORS FIX BRANCH
+git checkout feature/cors_adjustments
+ ./gradlew war
+ https://thinkster.io/angularjs-jwt-auth
+ https://bootswatch.com
+ https://bootswatch.com/lumen/
+ 
 ##### for different clients
 
