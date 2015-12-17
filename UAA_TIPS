@@ -39,6 +39,16 @@ git checkout feature/cors_adjustments
  https://thinkster.io/angularjs-jwt-auth
  https://bootswatch.com
  https://bootswatch.com/lumen/
+ https://www.percona.com/blog/2015/06/08/maxscale-a-new-tool-to-solve-your-mysql-scalability-problems/
  
 ##### for different clients
+
+
+Git:
+add modified and deleted files to staging
+git add -u
+git commit -m "Modified UI"
+git pull // to make sure merge with master
+git push origin master
+
 
